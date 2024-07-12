@@ -1,9 +1,7 @@
-baseURL = 'https://robertdouglass.github.io'
 languageCode = 'en-us'
 title = 'On Upsun'
 subtitle = 'Deploying cool code on the coolest PaaS'
 theme = 'ananke'
-canonifyURLs = true
 
 
 [params]
