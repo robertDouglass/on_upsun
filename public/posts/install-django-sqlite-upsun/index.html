@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Install Django with SQLite Upsun | Django and Upsun</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="What is Upsun? Upsun is a new Platform-as-a-Service (PaaS) offering from Platform.sh. As a PaaS, it is for developers who want to focus on writing the application code and not on the infrastructure that runs it. Here are some of the features that you get with Upsun:
+Support for many languages, including Python, PHP, Ruby, and many others. Support for many databases, including PostgreSQL, MariaDB, MongoDB and others. Support for other neat services like Redis, OpenSearch, Kafka, and Vault.">
+    <meta name="generator" content="Hugo 0.128.2">
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="http://localhost:1313/posts/install-django-sqlite-upsun/">
+    
+
+    <meta property="og:url" content="http://localhost:1313/posts/install-django-sqlite-upsun/">
+  <meta property="og:site_name" content="Django and Upsun">
+  <meta property="og:title" content="Install Django with SQLite Upsun">
+  <meta property="og:description" content="What is Upsun? Upsun is a new Platform-as-a-Service (PaaS) offering from Platform.sh. As a PaaS, it is for developers who want to focus on writing the application code and not on the infrastructure that runs it. Here are some of the features that you get with Upsun:
+Support for many languages, including Python, PHP, Ruby, and many others. Support for many databases, including PostgreSQL, MariaDB, MongoDB and others. Support for other neat services like Redis, OpenSearch, Kafka, and Vault.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-07-12T16:58:24+02:00">
+    <meta property="article:modified_time" content="2024-07-12T16:58:24+02:00">
+
+  <meta itemprop="name" content="Install Django with SQLite Upsun">
+  <meta itemprop="description" content="What is Upsun? Upsun is a new Platform-as-a-Service (PaaS) offering from Platform.sh. As a PaaS, it is for developers who want to focus on writing the application code and not on the infrastructure that runs it. Here are some of the features that you get with Upsun:
+Support for many languages, including Python, PHP, Ruby, and many others. Support for many databases, including PostgreSQL, MariaDB, MongoDB and others. Support for other neat services like Redis, OpenSearch, Kafka, and Vault.">
+  <meta itemprop="datePublished" content="2024-07-12T16:58:24+02:00">
+  <meta itemprop="dateModified" content="2024-07-12T16:58:24+02:00">
+  <meta itemprop="wordCount" content="2016">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Install Django with SQLite Upsun">
+  <meta name="twitter:description" content="What is Upsun? Upsun is a new Platform-as-a-Service (PaaS) offering from Platform.sh. As a PaaS, it is for developers who want to focus on writing the application code and not on the infrastructure that runs it. Here are some of the features that you get with Upsun:
+Support for many languages, including Python, PHP, Ruby, and many others. Support for many databases, including PostgreSQL, MariaDB, MongoDB and others. Support for other neat services like Redis, OpenSearch, Kafka, and Vault.">
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Django and Upsun
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Posts
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Install Django with SQLite Upsun</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2024-07-12T16:58:24+02:00">July 12, 2024</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h2 id="what-is-upsun">What is Upsun?</h2>
+<p><a href="https://upsun.com">Upsun</a> is a new Platform-as-a-Service (PaaS) offering from <a href="https://platform.sh">Platform.sh</a>. As a PaaS, it is for developers who want to focus on writing the application code and not on the infrastructure that runs it. Here are some of the features that you get with Upsun:</p>
+<ul>
+<li><a href="https://docs.upsun.com/languages.html">Support for many languages</a>, including Python, PHP, Ruby, and many others.</li>
+<li><a href="https://docs.upsun.com/add-services.html#available-services">Support for many databases</a>, including PostgreSQL, MariaDB, MongoDB and others.</li>
+<li><a href="https://docs.upsun.com/add-services.html#available-services">Support for other neat services</a> like Redis, OpenSearch, Kafka, and Vault.</li>
+<li>Git-based deployment: the only way to deploy code to Upsun is through <code>git push</code>.</li>
+<li>Instant clones of the entire infrastructure and their persistant data for the purpose of development and testing.</li>
+<li>Automatic TLS certificates.</li>
+<li>Blackfire.io integration for monitoring and profiling.</li>
+<li>Sendgrid integration for sending mails.</li>
+<li>Deploy into a wide range of AWS, GCP, or Azure regions.</li>
+<li>Backups.</li>
+<li>Much more, <a href="https://docs.upsun.com/">take a look</a>.</li>
+</ul>
+<h2 id="what-are-we-deploying">What are we deploying?</h2>
+<p>We&rsquo;ll deploy Django running on Gunicorn with a SQLite database. This is the most basic setup for a Django project on Upsun and it will introduce the basic ideas. The instructions are for MacOS.</p>
+<p>You need to have the following installed already:</p>
+<ul>
+<li>git</li>
+<li>python3</li>
+<li>pip</li>
+<li>homebrew</li>
+</ul>
+<h2 id="1-prepare-the-environment">1. Prepare the environment</h2>
+<pre tabindex="0"><code>mkdir upsun_django_sqlite
+cd upsun_django_sqlite
+python -m venv myenv
+source myenv/bin/activate
+pip install django
+pip install gunicorn
+pip freeze &gt; requirements.txt
+</code></pre><p>The above commands install the required python libraries and write them into a <code>requirements.txt</code> file. Upsun will use that file to install the python libraries into the server environment.</p>
+<h2 id="2-start-a-django-project">2. Start a Django project</h2>
+<pre tabindex="0"><code>django-admin startproject myproject
+cd myproject
+python manage.py startapp myapp
+python manage.py runserver
+</code></pre><p>This creates a Django project called <code>myproject</code> with an app called <code>myapp</code>, and it tests the basic install by starting the local server. You should see a message that ends similarly to this:</p>
+<pre tabindex="0"><code>Django version 5.0.7, using settings &#39;myapp.settings&#39;
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+</code></pre><p>And visiting http://127.0.0.1:8000/ should show you a screen like this. Quit the server with CONTROL-C.</p>
+<figure><img src="/images/03-upsun-django-running.png"><figcaption>
+      <h4>Django running locally</h4>
+    </figcaption>
+</figure>
+
+<h2 id="3-get-it-into-git">3. Get it into Git</h2>
+<pre tabindex="0"><code>cd ..
+pwd
+/Users/robert/Code/myproject
+</code></pre><p>You should be at the base directory of your project now.</p>
+<pre tabindex="0"><code>git init
+git add .
+git commit -m &#34;Initial Django installation.&#34;
+</code></pre><h2 id="4-install-the-upsun-cli-tool">4. Install the Upsun CLI tool</h2>
+<p>The Upsun <a href="https://docs.upsun.com/administration/cli.html#1-install">documentation for installing the CLI tool is here</a>. On Mac with Homebrew you do this:</p>
+<pre tabindex="0"><code>brew install platformsh/tap/upsun-cli
+</code></pre><h2 id="5-get-an-upsun-account-and-install-the-upsun-cli-tool">5. Get an Upsun account and install the upsun CLI tool.</h2>
+<p><a href="https://upsun.com">Visit Upsun and begin a free trial</a>. You&rsquo;ll be asked to create an organization and set a path for that organization.</p>
+<figure><img src="/images/01-upsun-organization.png"><figcaption>
+      <h4>Create an Upsun organization</h4>
+    </figcaption>
+</figure>
+
+<p>You&rsquo;ll be asked to start a new project. Choose &ldquo;Deploy an existing Git repository&rdquo;.</p>
+<figure><img src="/images/02-upsun-new-project.png"><figcaption>
+      <h4>Deploy an existing local git repository</h4>
+    </figcaption>
+</figure>
+
+<p>Name your project and choose a region. Sweden has the lowest CO2 output per compute unit due to their low-emmission energy sources.</p>
+<figure><img src="/images/04-upsun-region.png"><figcaption>
+      <h4>Your project details</h4>
+    </figcaption>
+</figure>
+
+<p>On the &ldquo;Prepare project locally&rdquo; screen that follows, you&rsquo;ve already done the first two steps, intalling the Upsun CLI and preparing your git repository locally. You need to wait for the third field, &ldquo;Connect directory to Upsun&rdquo; to populate as soon as your environment has been provisioned.</p>
+<figure><img src="/images/05-prepare-project-locally.png"><figcaption>
+      <h4>Wait for the connection details</h4>
+    </figcaption>
+</figure>
+
+<h2 id="4-authenticate-the-upsun-cli-and-set-the-remote">4. Authenticate the Upsun CLI and set the remote</h2>
+<p>When the third field populates it will have a command that includes your project ID. Make sure to use yours, not mine (as shown below).</p>
+<pre tabindex="0"><code>upsun project:set-remote oes36x5dtgp2u
+</code></pre><p>This will cause you to first authenticate the CLI by opening a browser window, and then it will add a git remote to the git repository and provision a key to let you interact with Upsun from the command line.</p>
+<h2 id="5-use-the-upsun-cli-to-add-the-upsun-configuration">5. Use the Upsun CLI to add the Upsun configuration</h2>
+<p>Upsun needs information about your project to be able to run it properly. Fortunately for Django developers, there&rsquo;s a command that gets us most of the way there.</p>
+<pre tabindex="0"><code>upsun project:init
+</code></pre><p>When you get to this part, just push Enter and don&rsquo;t add services for now.</p>
+<pre tabindex="0"><code>Select all the services you are using:
+Use arrows to move, space to select, type to filter
+&gt; [ ]  MariaDB
+  [ ]  MySQL
+  [ ]  PostgreSQL
+  [ ]  Redis
+  [ ]  Redis Persistent
+  [ ]  Memcached
+  [ ]  OpenSearch
+</code></pre><p>Upsun will claim to have done the follwing:</p>
+<pre tabindex="0"><code>
+┌───────────────────────────────────────────────────┐
+│   CONGRATULATIONS!                                │
+│                                                   │
+│   We have created the following files for your:   │
+│     - .environment                                │
+│     - .upsun/config.yaml                          │
+│                                                   │
+│   We’re jumping for joy! ⍢                        │
+└───────────────────────────────────────────────────┘
+         │ /
+         │/
+         │
+  (\ /)
+  ( . .)
+  o (_(“)(“)
+</code></pre><p>To see all of the changes, use git:</p>
+<pre tabindex="0"><code> git status
+On branch main
+Changes not staged for commit:
+(use &#34;git add &lt;file&gt;...&#34; to update what will be committed)
+(use &#34;git restore &lt;file&gt;...&#34; to discard changes in working directory)
+  modified:   myproject/myproject/settings.py
+
+Untracked files:
+(use &#34;git add &lt;file&gt;...&#34; to include in what will be committed)
+  .upsun/
+  myproject/myproject/settings_psh.py
+</code></pre><p>Let&rsquo;s add those to git.</p>
+<pre tabindex="0"><code>git add .
+git commit -m &#34;upsun project:init&#34;
+[main 32ccfb6] upsun project:init
+ 3 files changed, 231 insertions(+)
+ create mode 100644 .upsun/config.yaml
+ create mode 100644 myproject/myproject/settings_psh.py
+</code></pre><p>The change to your <code>settings.py</code> file is quite small, it just included the newly created <code>setting_psh.py</code> file which includes code to read variables out of the Upsun environment.</p>
+<h2 id="6-add-a-mount-for-the-sqlite-database">6. Add a mount for the SQLite database</h2>
+<p>One step that Upsun misses if you are using SQLite is to add a mount for the database. This is important because all of the code and static assets that we&rsquo;ve created so far will be deployed onto a read-only file system on Upsun. This is great for security and general good DevOps hygiene, but it means Django will fail if it doesn&rsquo;t have a place to write its data.</p>
+<p>Open <code>.upsun/config.yaml</code> in your code editor and add the following:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>    <span style="color:#f92672">mounts</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;/db&#34;: </span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">source</span>: <span style="color:#e6db74">&#34;storage&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">source_path</span>: <span style="color:#e6db74">&#34;db&#34;</span> 
+</span></span></code></pre></div><h2 id="7-point-django-to-the-mount-for-the-database">7. Point Django to the mount for the database</h2>
+<p>At the top of your <code>./myproject/myproject/settings.py</code> file, add an import for the <code>os</code> package.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> os
+</span></span></code></pre></div><p>In your <code>./myproject/myproject/settings.py</code> file, find the <code>DATABASES</code> variable and replace it with the following, including the <code>DB_DIR</code> variable.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Database</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># https://docs.djangoproject.com/en/5.0/ref/settings/#databases</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Set the DB_DIR to one level higher than BASE_DIR</span>
+</span></span><span style="display:flex;"><span>DB_DIR <span style="color:#f92672">=</span> BASE_DIR<span style="color:#f92672">.</span>parent
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>DATABASES <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;default&#39;</span>: {
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;ENGINE&#39;</span>: <span style="color:#e6db74">&#39;django.db.backends.sqlite3&#39;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;NAME&#39;</span>: <span style="color:#e6db74">&#39;db/db.sqlite3&#39;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;NAME&#39;</span>: os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(DB_DIR, <span style="color:#e6db74">&#39;db&#39;</span>, <span style="color:#e6db74">&#39;db.sqlite3&#39;</span>),
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="8-add-it-to-git-and-get-it-up-to-upsun">8. Add it to Git and get it up to Upsun</h2>
+<pre tabindex="0"><code>git add .
+git commit -m &#34;Mount for SQLite&#34;
+upsun push
+</code></pre><p>You should see a lot of terminal output at this point, and I&rsquo;ll dig into that in a moment. But the end should look like this:</p>
+<pre tabindex="0"><code>...
+            Applying auth.0011_update_proxy_permissions... OK
+            Applying auth.0012_alter_user_first_name_max_length... OK
+            Applying sessions.0001_initial... OK
+
+        Opening environment
+        Environment configuration
+          upsun_django_sqlite (type: python:3.11, cpu: 0.5, memory: 224, disk: 512)
+
+        Environment routes
+          http://main-bvxea6i-oes36x5dtgp2u.eu-5.platformsh.site/ redirects to https://main-bvxea6i-oes36x5dtgp2u.eu-5.platformsh.site/
+          http://www.main-bvxea6i-oes36x5dtgp2u.eu-5.platformsh.site/ redirects to https://www.main-bvxea6i-oes36x5dtgp2u.eu-5.platformsh.site/
+          https://main-bvxea6i-oes36x5dtgp2u.eu-5.platformsh.site/ is served by application `upsun_django_sqlite`
+          https://www.main-bvxea6i-oes36x5dtgp2u.eu-5.platformsh.site/ redirects to https://main-bvxea6i-oes36x5dtgp2u.eu-5.platformsh.site/
+
+      Blackfire build scheduled
+
+
+  To git.eu-5.platform.sh:oes36x5dtgp2u.git
+   * [new branch]      HEAD -&gt; main
+</code></pre><p>If yours looks similar, congratulations, you have a Django app running. Let&rsquo;s open it up.</p>
+<pre tabindex="0"><code>upsun url
+</code></pre><p>You&rsquo;ll get a number of options. These are called <code>routes</code> in Upsun parlance. Pick any of them.</p>
+<pre tabindex="0"><code>Enter a number to open a URL
+  [0] https://main-bvxea6i-oes36x5dtgp2u.eu-5.platformsh.site/
+  [1] https://www.main-bvxea6i-oes36x5dtgp2u.eu-5.platformsh.site/
+  [2] http://main-bvxea6i-oes36x5dtgp2u.eu-5.platformsh.site/
+  [3] http://www.main-bvxea6i-oes36x5dtgp2u.eu-5.platformsh.site/
+</code></pre><figure><img src="/images/06-not-found.png"><figcaption>
+      <h4>Not Found</h4>
+    </figcaption>
+</figure>
+
+<p>Oops! Is that a mistake? No, this is expected. Try adding <code>/admin</code> to the end of the URL in the browser:</p>
+<figure><img src="/images/07-admin.png"><figcaption>
+      <h4>Django admin</h4>
+    </figcaption>
+</figure>
+
+<p>That&rsquo;s better, but we don&rsquo;t have an admin user yet. Let&rsquo;s create one.</p>
+<h2 id="9-create-the-admin-user">9. Create the admin user</h2>
+<p>Upsun has a lot of functionality built into its CLI. You can see the options by running <code>upsun list</code>. One of the great features is the ability to easiy open a shell on the environment that you&rsquo;re working on. Let&rsquo;s do that:</p>
+<pre tabindex="0"><code>upsun ssh
+
+ _   _
+| | | |_ __ ____  _ _ _
+| |_| | &#39;_ (_-&lt; || | &#39; \
+ \___/| .__/__/\_,_|_||_|
+      |_|
+
+ Welcome to Upsun.
+
+Environment: main-bvxea6i
+Branch: main
+Project: oes36x5dtgp2u
+
+web@upsun_django_sqlite.0:~$
+</code></pre><p>You&rsquo;re now on the command line of your web environment. You can interact with your Django environment now.</p>
+<pre tabindex="0"><code>python myproject/manage.py createsuperuser
+</code></pre><p>After entering your super user information you should be able to log into the admin area of your Django app in the browser.</p>
+<h2 id="10-lets-look-at-what-happened-when-we-deployed">10. Let&rsquo;s look at what happened when we deployed</h2>
+<p>When we ran <code>upsun push</code> a lot happened. Let&rsquo;s look at it all.</p>
+<pre tabindex="0"><code>upsun push
+[main 5f1e4af] Mount for SQLite
+ 2 files changed, 10 insertions(+), 2 deletions(-)
+Selected project: Django SQLite (oes36x5dtgp2u)
+
+Pushing HEAD to the environment main (type: production).
+
+Are you sure you want to continue? [Y/n] y
+</code></pre><p>Upsun can have many copies of your app in different environments. At the beginning, we&rsquo;ve just got one production environment on the <code>main</code> branch, but we could eventually have many environments that are used for testing and developing.</p>
+<pre tabindex="0"><code>
+  Enumerating objects: 8317, done.
+  Counting objects: 100% (8317/8317), done.
+  Delta compression using up to 10 threads
+  Compressing objects: 100% (5188/5188), done.
+  Writing objects: 100% (8317/8317), 13.87 MiB | 9.28 MiB/s, done.
+  Total 8317 (delta 2044), reused 8299 (delta 2037), pack-reused 0
+
+  Validating submodules
+
+  Validating configuration files
+
+  Processing activity: Robert Douglass ROBSHOUSE pushed to Main
+      Found 3 commits
+
+      Configuring resources
+        Using default resources
+          Setting &#39;upsun_django_sqlite&#39; resources to 0.5 CPU, 224MB RAM.
+          Setting &#39;upsun_django_sqlite&#39; disk to 512MB.
+</code></pre><p>Based on our <code>.upsun/config.yaml</code> file, Upsun determined that we need one runtime environment with 0.5 CPU and 224MB RAM, and one disk mount with 512MB. You can read about how to <a href="https://docs.upsun.com/manage-resources/adjust-resources.html">adjust these resources in the Upsun documentation</a>.</p>
+<pre tabindex="0"><code>
+      Building application &#39;upsun_django_sqlite&#39; (runtime type: python:3.11, tree: 7e514d7)
+        Generating runtime configuration.
+
+        Executing build hook...
+          W: + pip install -r requirements.txt
+          Collecting asgiref==3.8.1
+            Downloading asgiref-3.8.1-py3-none-any.whl (23 kB)
+          Collecting Django==5.0.7
+            Downloading Django-5.0.7-py3-none-any.whl (8.2 MB)
+          Collecting gunicorn==22.0.0
+            Downloading gunicorn-22.0.0-py3-none-any.whl (84 kB)
+          Collecting packaging==24.1
+            Downloading packaging-24.1-py3-none-any.whl (53 kB)
+          Collecting sqlparse==0.5.0
+            Downloading sqlparse-0.5.0-py3-none-any.whl (43 kB)
+          Installing collected packages: sqlparse, packaging, asgiref, gunicorn, Django
+          Successfully installed Django-5.0.7 asgiref-3.8.1 gunicorn-22.0.0 packaging-24.1 sqlparse-0.5.0
+</code></pre><p>This is the part where Upsun uses <code>requirements.txt</code> to install your python libraries. This is done in the <a href="https://docs.upsun.com/create-apps/hooks/hooks-comparison.html#build-hook">Upsun build hook</a>.</p>
+<pre tabindex="0"><code>          W: + python myproject/manage.py collectstatic --noinput
+
+          126 static files copied to &#39;/app/static&#39;.
+</code></pre><p>Upsun just ran a command to collect the static assets from your project and put them into a read-only location <code>/app/static</code> where the server can serve them. This command is also in the build hook (see <code>.upsun/config.yaml</code>).</p>
+<pre tabindex="0"><code>
+        Executing pre-flight checks...
+
+        Compressing application.
+        Beaming package to its final destination.
+
+      W: Route &#39;main-bvxea6i-oes36x5dtgp2u.eu-5.platformsh.site&#39; doesn&#39;t map to a domain of the project, using default development hostname.
+      W: Route &#39;www.main-bvxea6i-oes36x5dtgp2u.eu-5.platformsh.site&#39; doesn&#39;t map to a domain of the project, using default development hostname.
+</code></pre><p>Based on the <code>routes</code> part of <code>.upsun/config.yaml</code>, Upsun has created the above URLs to access your application.</p>
+<pre tabindex="0"><code>      Provisioning certificates
+        Validating 2 new domains
+        Provisioned new certificate for 2 domains
+        (Next refresh will be at 2024-09-12 15:19:54+00:00.)
+        Certificates
+        - certificate 57594b5: expiring on 2024-10-10 15:19:54+00:00, covering {,www}.main-bvxea6i-oes36x5dtgp2u.eu-5.platformsh.site
+</code></pre><p>Upsun provisioned LetsEncrypt certificates so that you&rsquo;re running on <code>https</code> by default.</p>
+<pre tabindex="0"><code>      Blackfire configured for application upsun_django_sqlite
+</code></pre><p>Upsun automatically <a href="https://docs.upsun.com/increase-observability/application-metrics/understanding.html#blackfire-deterministic-observability-for-php-and-python">integrates with Blackfire.io for monitoring and profiling</a>.</p>
+<pre tabindex="0"><code>      Creating environment main
+        Starting environment
+        Updating endpoints for upsun_django_sqlite
+        Opening application upsun_django_sqlite and its relationships
+        Executing deploy hook for application upsun_django_sqlite
+          W: + python myproject/manage.py migrate
+          Operations to perform:
+            Apply all migrations: admin, auth, contenttypes, sessions
+          Running migrations:
+            Applying contenttypes.0001_initial... OK
+            Applying auth.0001_initial... OK
+            Applying admin.0001_initial... OK
+            Applying admin.0002_logentry_remove_auto_add... OK
+            Applying admin.0003_logentry_add_action_flag_choices... OK
+            Applying contenttypes.0002_remove_content_type_name... OK
+            Applying auth.0002_alter_permission_name_max_length... OK
+            Applying auth.0003_alter_user_email_max_length... OK
+            Applying auth.0004_alter_user_username_opts... OK
+            Applying auth.0005_alter_user_last_login_null... OK
+            Applying auth.0006_require_contenttypes_0002... OK
+            Applying auth.0007_alter_validators_add_error_messages... OK
+            Applying auth.0008_alter_user_username_max_length... OK
+            Applying auth.0009_alter_user_last_name_max_length... OK
+            Applying auth.0010_alter_group_name_max_length... OK
+            Applying auth.0011_update_proxy_permissions... OK
+            Applying auth.0012_alter_user_first_name_max_length... OK
+            Applying sessions.0001_initial... OK
+</code></pre><p>The <a href="https://docs.upsun.com/create-apps/hooks/hooks-comparison.html#deploy-hook">Upsun deploy hook</a> is run after the application is in its environments but before requests are allowed to hit the webserver. In this case, Upsun has run the Django migrations which, on the first push, also creates and populates the SQLite database.</p>
+<pre tabindex="0"><code>        Opening environment
+        Environment configuration
+          upsun_django_sqlite (type: python:3.11, cpu: 0.5, memory: 224, disk: 512)
+
+        Environment routes
+          http://main-bvxea6i-oes36x5dtgp2u.eu-5.platformsh.site/ redirects to https://main-bvxea6i-oes36x5dtgp2u.eu-5.platformsh.site/
+          http://www.main-bvxea6i-oes36x5dtgp2u.eu-5.platformsh.site/ redirects to https://www.main-bvxea6i-oes36x5dtgp2u.eu-5.platformsh.site/
+          https://main-bvxea6i-oes36x5dtgp2u.eu-5.platformsh.site/ is served by application `upsun_django_sqlite`
+          https://www.main-bvxea6i-oes36x5dtgp2u.eu-5.platformsh.site/ redirects to https://main-bvxea6i-oes36x5dtgp2u.eu-5.platformsh.site/
+
+      Blackfire build scheduled
+
+
+  To git.eu-5.platform.sh:oes36x5dtgp2u.git
+   * [new branch]      HEAD -&gt; main
+</code></pre><p>Thanks for reading the tutorial! If you have any questions, my email address is <a href="mailto:rob@robshouse.net">rob@robshouse.net</a> and you can <a href="https://www.linkedin.com/in/roberttdouglass/">find me on LinkedIn</a>. There is also an <a href="https://discord.gg/PkMc2pVCDV">Upsun Discord forum</a> where I hang out, and you&rsquo;re welcome to find me there.</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://localhost:1313/" >
+    &copy;  Django and Upsun 2024 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

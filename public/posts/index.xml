@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Django and Upsun</title>
+    <link>http://localhost:1313/posts/</link>
+    <description>Recent content in Posts on Django and Upsun</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 12 Jul 2024 16:58:24 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Install Django with SQLite Upsun</title>
+      <link>http://localhost:1313/posts/install-django-sqlite-upsun/</link>
+      <pubDate>Fri, 12 Jul 2024 16:58:24 +0200</pubDate>
+      <guid>http://localhost:1313/posts/install-django-sqlite-upsun/</guid>
+      <description>What is Upsun? Upsun is a new Platform-as-a-Service (PaaS) offering from Platform.sh. As a PaaS, it is for developers who want to focus on writing the application code and not on the infrastructure that runs it. Here are some of the features that you get with Upsun:&#xA;Support for many languages, including Python, PHP, Ruby, and many others. Support for many databases, including PostgreSQL, MariaDB, MongoDB and others. Support for other neat services like Redis, OpenSearch, Kafka, and Vault.</description>
+    </item>
+  </channel>
+</rss>

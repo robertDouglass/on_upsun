@@ -1,0 +1,24 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'Django and Upsun'
+theme = 'ananke'
+
+[params]
+  email = 'rob@robshouse.net'
+  name = 'Robert Douglass'
+
+[markup]
+  [markup.highlight]
+    anchorLineNos = false
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ''
+    hl_inline = false
+    lineAnchors = ''
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+    noHl = false
+    style = 'monokai'
+    tabWidth = 4
