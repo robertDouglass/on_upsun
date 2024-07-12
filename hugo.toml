@@ -1,9 +1,10 @@
-baseURL = 'on_upsun/'
+baseURL = 'https://robertdouglass.github.io'
 languageCode = 'en-us'
 title = 'On Upsun'
 subtitle = 'Deploying cool code on the coolest PaaS'
 theme = 'ananke'
-
+canonifyURLs = true
+relativeURLs = true
 
 [params]
   subtitle = 'Deploying cool code on the coolest PaaS'
