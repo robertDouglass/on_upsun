@@ -1,4 +1,4 @@
-baseURL = 'https://example.com'
+baseURL = 'on_upsun/'
 languageCode = 'en-us'
 title = 'On Upsun'
 subtitle = 'Deploying cool code on the coolest PaaS'
