@@ -1,4 +1,4 @@
-baseURL = 'https://robertdouglass.github.io/'
+baseURL = 'https://robertdouglass.github.io/on_upsun/'
 languageCode = 'en-us'
 title = 'On Upsun'
 subtitle = 'Deploying cool code on the coolest PaaS'
