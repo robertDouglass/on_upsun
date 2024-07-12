@@ -66,7 +66,7 @@ Quit the server with CONTROL-C.
 And visiting http://127.0.0.1:8000/ should show you a screen like this. Quit the server with CONTROL-C.
 
 
-{{< figure src="/images/03-upsun-django-running.png" title="Django running locally" >}}
+{{< figure src="images/03-upsun-django-running.png" title="Django running locally" >}}
 
 
 ## 3. Get it into Git
@@ -98,19 +98,19 @@ brew install platformsh/tap/upsun-cli
 
 [Visit Upsun and begin a free trial](https://upsun.com). You'll be asked to create an organization and set a path for that organization.
 
-{{< figure src="/images/01-upsun-organization.png" title="Create an Upsun organization" >}}
+{{< figure src="images/01-upsun-organization.png" title="Create an Upsun organization" >}}
 
 You'll be asked to start a new project. Choose "Deploy an existing Git repository". 
 
-{{< figure src="/images/02-upsun-new-project.png" title="Deploy an existing local git repository" >}}
+{{< figure src="images/02-upsun-new-project.png" title="Deploy an existing local git repository" >}}
 
 Name your project and choose a region. Sweden has the lowest CO2 output per compute unit due to their low-emmission energy sources. 
 
-{{< figure src="/images/04-upsun-region.png" title="Your project details" >}}
+{{< figure src="images/04-upsun-region.png" title="Your project details" >}}
 
 On the "Prepare project locally" screen that follows, you've already done the first two steps, intalling the Upsun CLI and preparing your git repository locally. You need to wait for the third field, "Connect directory to Upsun" to populate as soon as your environment has been provisioned. 
 
-{{< figure src="/images/05-prepare-project-locally.png" title="Wait for the connection details" >}}
+{{< figure src="images/05-prepare-project-locally.png" title="Wait for the connection details" >}}
 
 ## 4. Authenticate the Upsun CLI and set the remote
 
@@ -282,11 +282,11 @@ Enter a number to open a URL
   [3] http://www.main-bvxea6i-oes36x5dtgp2u.eu-5.platformsh.site/
 ```
 
-{{< figure src="/images/06-not-found.png" title="Not Found" >}}
+{{< figure src="images/06-not-found.png" title="Not Found" >}}
 
 Oops! Is that a mistake? No, this is expected. Try adding `/admin` to the end of the URL in the browser:
 
-{{< figure src="/images/07-admin.png" title="Django admin" >}}
+{{< figure src="images/07-admin.png" title="Django admin" >}}
 
 That's better, but we don't have an admin user yet. Let's create one.
 
