@@ -66,7 +66,7 @@ Quit the server with CONTROL-C.
 And visiting http://127.0.0.1:8000/ should show you a screen like this. Quit the server with CONTROL-C.
 
 
-{{< figure src="/images/03-upsun-django-running.png" title="Django running locally" >}}
+{{< figure src="/on_upsun/images/03-upsun-django-running.png" title="Django running locally" >}}
 
 
 ## 3. Get it into Git
