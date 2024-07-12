@@ -66,7 +66,7 @@ Quit the server with CONTROL-C.
 And visiting http://127.0.0.1:8000/ should show you a screen like this. Quit the server with CONTROL-C.
 
 
-{{< figure src="/images/03-upsun-django-running.png" title="Django running locally" >}}
+{{< figure src="/on_upsun/images/03-upsun-django-running.png" title="Django running locally" >}}
 
 
 ## 3. Get it into Git
@@ -98,7 +98,7 @@ brew install platformsh/tap/upsun-cli
 
 [Visit Upsun and begin a free trial](https://upsun.com). You'll be asked to create an organization and set a path for that organization.
 
-{{< figure src="images/01-upsun-organization.png" title="Create an Upsun organization" >}}
+{{< figure src="on_upsun/images/01-upsun-organization.png" title="Create an Upsun organization" >}}
 
 You'll be asked to start a new project. Choose "Deploy an existing Git repository". 
 
