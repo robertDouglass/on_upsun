@@ -1,9 +1,9 @@
-baseURL = 'https://robertdouglass.github.io/on_upsun/'
+baseURL = 'https://example.com'
 languageCode = 'en-us'
 title = 'On Upsun'
 subtitle = 'Deploying cool code on the coolest PaaS'
 theme = 'ananke'
-relativeURLs = true
+
 
 [params]
   subtitle = 'Deploying cool code on the coolest PaaS'
