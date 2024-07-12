@@ -1,9 +1,11 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://robertdouglass.github.io/'
 languageCode = 'en-us'
-title = 'Django and Upsun'
+title = 'On Upsun'
+subtitle = 'Deploying cool code on the coolest PaaS'
 theme = 'ananke'
 
 [params]
+  subtitle = 'Deploying cool code on the coolest PaaS'
   email = 'rob@robshouse.net'
   name = 'Robert Douglass'
 
