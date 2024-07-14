@@ -5,10 +5,10 @@ draft = false
 +++
 
 1
-{{< figure src="/on_upsun/images/03-upsun-django-running.png" title="Django running locally" >}}
+{{< figure src="posts/install-django-sqlite-upsun/03-upsun-django-running.png" title="Django running locally" >}}
 
 2
-{{< figure src="on_upsun/images/03-upsun-django-running.png" title="Django running locally" >}}
+{{< figure src="/posts/install-django-sqlite-upsun/03-upsun-django-running.png" title="Django running locally" >}}
 
 
 
