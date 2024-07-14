@@ -1,6 +1,4 @@
-{{ range site.Params.custom_css }}
-  {{ with partialCached "func/style/GetResource" . . }}{{ else }}
-  option 2
-    <link rel="stylesheet" href="{{ relURL (.) }}">
-  {{ end }}
+{{ with partialCached "func/style/GetMainCSS" "style/GetMainCSS" }}
+<link rel="stylesheet" href="{{ .RelPermalink }}" >
+<link rel="stylesheet" href="{{ relURL (.) }}">
 {{ end }}
