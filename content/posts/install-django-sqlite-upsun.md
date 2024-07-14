@@ -4,6 +4,16 @@ date = 2024-07-12T16:58:24+02:00
 draft = false
 +++
 
+1
+{{< figure src="/on_upsun/images/03-upsun-django-running.png" title="Django running locally" >}}
+
+2
+{{< figure src="on_upsun/images/03-upsun-django-running.png" title="Django running locally" >}}
+
+
+
+
+
 ## What is Upsun?
 
 [Upsun](https://upsun.com) is a new Platform-as-a-Service (PaaS) offering from [Platform.sh](https://platform.sh). As a PaaS, it is for developers who want to focus on writing the application code and not on the infrastructure that runs it. Here are some of the features that you get with Upsun:
@@ -106,7 +116,6 @@ You'll be asked to start a new project. Choose "Deploy an existing Git repositor
 
 Name your project and choose a region. Sweden has the lowest CO2 output per compute unit due to their low-emmission energy sources. 
 
-<link rel="stylesheet" href="{{ "css/style.css" | absURL }}">
 {{< figure src="/images/04-upsun-region.png" title="Your project details" >}}
 
 On the "Prepare project locally" screen that follows, you've already done the first two steps, intalling the Upsun CLI and preparing your git repository locally. You need to wait for the third field, "Connect directory to Upsun" to populate as soon as your environment has been provisioned. 

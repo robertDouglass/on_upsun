@@ -6,6 +6,8 @@ theme = 'ananke'
 
 
 canonifyURLs = true
+relativeURLs = true
+
 
 
 [params]
