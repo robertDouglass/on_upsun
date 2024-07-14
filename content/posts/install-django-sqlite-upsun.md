@@ -4,16 +4,6 @@ date = 2024-07-12T16:58:24+02:00
 draft = false
 +++
 
-1
-{{< figure src="posts/install-django-sqlite-upsun/03-upsun-django-running.png" title="Django running locally" >}}
-
-2
-{{< figure src="/posts/install-django-sqlite-upsun/03-upsun-django-running.png" title="Django running locally" >}}
-
-
-
-
-
 ## What is Upsun?
 
 [Upsun](https://upsun.com) is a new Platform-as-a-Service (PaaS) offering from [Platform.sh](https://platform.sh). As a PaaS, it is for developers who want to focus on writing the application code and not on the infrastructure that runs it. Here are some of the features that you get with Upsun:
@@ -76,7 +66,7 @@ Quit the server with CONTROL-C.
 And visiting http://127.0.0.1:8000/ should show you a screen like this. Quit the server with CONTROL-C.
 
 
-{{< figure src="/on_upsun/images/03-upsun-django-running.png" title="Django running locally" >}}
+{{< figure src="/posts/install-django-sqlite-upsun/03-upsun-django-running.png" title="Django running locally" >}}
 
 
 ## 3. Get it into Git
@@ -108,19 +98,19 @@ brew install platformsh/tap/upsun-cli
 
 [Visit Upsun and begin a free trial](https://upsun.com). You'll be asked to create an organization and set a path for that organization.
 
-{{< figure src="on_upsun/images/01-upsun-organization.png" title="Create an Upsun organization" >}}
+{{< figure src="/posts/install-django-sqlite-upsun/01-upsun-organization.png" title="Create an Upsun organization" >}}
 
 You'll be asked to start a new project. Choose "Deploy an existing Git repository". 
 
-{{< figure src="images/02-upsun-new-project.png" title="Deploy an existing local git repository" >}}
+{{< figure src="/posts/install-django-sqlite-upsun/02-upsun-new-project.png" title="Deploy an existing local git repository" >}}
 
 Name your project and choose a region. Sweden has the lowest CO2 output per compute unit due to their low-emmission energy sources. 
 
-{{< figure src="/images/04-upsun-region.png" title="Your project details" >}}
+{{< figure src="/posts/install-django-sqlite-upsun/04-upsun-region.png" title="Your project details" >}}
 
 On the "Prepare project locally" screen that follows, you've already done the first two steps, intalling the Upsun CLI and preparing your git repository locally. You need to wait for the third field, "Connect directory to Upsun" to populate as soon as your environment has been provisioned. 
 
-{{< figure src="images/05-prepare-project-locally.png" title="Wait for the connection details" >}}
+{{< figure src="/posts/install-django-sqlite-upsun/05-prepare-project-locally.png" title="Wait for the connection details" >}}
 
 ## 4. Authenticate the Upsun CLI and set the remote
 
@@ -292,11 +282,11 @@ Enter a number to open a URL
   [3] http://www.main-bvxea6i-oes36x5dtgp2u.eu-5.platformsh.site/
 ```
 
-{{< figure src="images/06-not-found.png" title="Not Found" >}}
+{{< figure src="/posts/install-django-sqlite-upsun/06-not-found.png" title="Not Found" >}}
 
 Oops! Is that a mistake? No, this is expected. Try adding `/admin` to the end of the URL in the browser:
 
-{{< figure src="images/07-admin.png" title="Django admin" >}}
+{{< figure src="/posts/install-django-sqlite-upsun/07-admin.png" title="Django admin" >}}
 
 That's better, but we don't have an admin user yet. Let's create one.
 
