@@ -1,5 +1,5 @@
 +++
-title = 'Install Django with SQLite Upsun'
+title = 'Install Django with SQLite on Upsun'
 date = 2024-07-12T16:58:24+02:00
 draft = false
 +++
