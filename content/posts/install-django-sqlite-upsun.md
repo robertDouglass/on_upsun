@@ -106,6 +106,7 @@ You'll be asked to start a new project. Choose "Deploy an existing Git repositor
 
 Name your project and choose a region. Sweden has the lowest CO2 output per compute unit due to their low-emmission energy sources. 
 
+<link rel="stylesheet" href="{{ "css/style.css" | absURL }}">
 {{< figure src="/images/04-upsun-region.png" title="Your project details" >}}
 
 On the "Prepare project locally" screen that follows, you've already done the first two steps, intalling the Upsun CLI and preparing your git repository locally. You need to wait for the third field, "Connect directory to Upsun" to populate as soon as your environment has been provisioned. 
