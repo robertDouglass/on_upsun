@@ -144,7 +144,7 @@ Use arrows to move, space to select, type to filter
   [ ]  OpenSearch
 ```
 
-Upsun will claim to have done the follwing:
+Upsun will claim to have done the following:
 
 ```
 
