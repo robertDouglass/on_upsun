@@ -12,7 +12,8 @@ draft = false
 * [Support for many databases](https://docs.upsun.com/add-services.html#available-services), including PostgreSQL, MariaDB, MongoDB and others.
 * [Support for other neat services](https://docs.upsun.com/add-services.html#available-services) like Redis, OpenSearch, Kafka, and Vault. 
 * Git-based deployment: the only way to deploy code to Upsun is through `git push`.
-* Instant clones of the entire environment, including persistant data, for the purpose of development and testing. 
+* Instant clones of the entire environment, including persistant data, for the purpose of development and testing.
+* Environmental variables that get inherited from the production environment and can be overridden. 
 * Automatic TLS certificates. 
 * Blackfire.io integration for monitoring and profiling. 
 * Sendgrid integration for sending mails. 
