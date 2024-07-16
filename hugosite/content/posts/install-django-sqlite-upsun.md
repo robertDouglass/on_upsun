@@ -34,7 +34,7 @@ You need to have the following installed already:
 
 ## 1. Prepare the environment
 
-```
+```bash
 mkdir upsun_django_sqlite
 cd upsun_django_sqlite
 python -m venv myenv
@@ -48,7 +48,7 @@ The above commands install the required python libraries and write them into a `
 
 ## 2. Start a Django project
 
-```
+```bash
 django-admin startproject myproject
 cd myproject
 python manage.py startapp myapp
@@ -57,7 +57,7 @@ python manage.py runserver
 
 This creates a Django project called `myproject` with an app called `myapp`, and it tests the basic install by starting the local server. You should see a message that ends similarly to this:
 
-```
+```bash
 Django version 5.0.7, using settings 'myapp.settings'
 Starting development server at http://127.0.0.1:8000/
 Quit the server with CONTROL-C.
@@ -68,10 +68,15 @@ And visiting http://127.0.0.1:8000/ should show you a screen like this. Quit the
 
 {{< figure src="/posts/install-django-sqlite-upsun/03-upsun-django-running.png" title="Django running locally" >}}
 
+You can also remove the SQLite database that got created on the last step. 
+
+```bash
+rm db.sqlite3
+```
 
 ## 3. Get it into Git
 
-```
+```bash
 cd ..
 pwd
 /Users/robert/Code/myproject
@@ -79,7 +84,7 @@ pwd
 
 You should be at the base directory of your project now.
 
-```
+```bash
 git init
 git add .
 git commit -m "Initial Django installation."
@@ -89,7 +94,7 @@ git commit -m "Initial Django installation."
 
 The Upsun [documentation for installing the CLI tool is here](https://docs.upsun.com/administration/cli.html#1-install). On Mac with Homebrew you do this:
 
-```
+```bash
 brew install platformsh/tap/upsun-cli
 ```
 
@@ -116,7 +121,7 @@ On the "Prepare project locally" screen that follows, you've already done the fi
 
 When the third field populates it will have a command that includes your project ID. Make sure to use yours, not mine (as shown below).
 
-```
+```bash
 upsun project:set-remote oes36x5dtgp2u
 ```
 
@@ -126,13 +131,13 @@ This will cause you to first authenticate the CLI by opening a browser window, a
 
 Upsun needs information about your project to be able to run it properly. Fortunately for Django developers, there's a command that gets us most of the way there. 
 
-```
+```bash
 upsun project:init
 ```
 
 When you get to this part, just push Enter and don't add services for now. 
 
-```
+```bash
 Select all the services you are using:
 Use arrows to move, space to select, type to filter
 > [ ]  MariaDB
@@ -146,8 +151,7 @@ Use arrows to move, space to select, type to filter
 
 Upsun will claim to have done the following:
 
-```
-
+```bash
 ┌───────────────────────────────────────────────────┐
 │   CONGRATULATIONS!                                │
 │                                                   │
@@ -167,7 +171,7 @@ Upsun will claim to have done the following:
 
   To see all of the changes, use git:
 
-  ```
+```bash
    git status
 On branch main
 Changes not staged for commit:
@@ -183,7 +187,7 @@ Untracked files:
 
 Let's add those to git.
 
-```
+```bash
 git add .
 git commit -m "upsun project:init"
 [main 32ccfb6] upsun project:init
@@ -235,7 +239,7 @@ DATABASES = {
 
 ## 8. Add it to Git and get it up to Upsun
 
-```
+```bash
 git add .
 git commit -m "Mount for SQLite"
 upsun push
@@ -243,7 +247,7 @@ upsun push
 
 You should see a lot of terminal output at this point, and I'll dig into that in a moment. But the end should look like this:
 
-```
+```bash
 ...
             Applying auth.0011_update_proxy_permissions... OK
             Applying auth.0012_alter_user_first_name_max_length... OK
@@ -268,13 +272,13 @@ You should see a lot of terminal output at this point, and I'll dig into that in
 
 If yours looks similar, congratulations, you have a Django app running. Let's open it up.
 
-```
+```bash
 upsun url
 ```
 
 You'll get a number of options. These are called `routes` in Upsun parlance. Pick any of them.
 
-```
+```bash
 Enter a number to open a URL
   [0] https://main-bvxea6i-oes36x5dtgp2u.eu-5.platformsh.site/
   [1] https://www.main-bvxea6i-oes36x5dtgp2u.eu-5.platformsh.site/
@@ -294,7 +298,7 @@ That's better, but we don't have an admin user yet. Let's create one.
 
 Upsun has a lot of functionality built into its CLI. You can see the options by running `upsun list`. One of the great features is the ability to easiy open a shell on the environment that you're working on. Let's do that:
 
-```
+```bash
 upsun ssh
 
  _   _
@@ -314,7 +318,7 @@ web@upsun_django_sqlite.0:~$
 
 You're now on the command line of your web environment. You can interact with your Django environment now.
 
-```
+```bash
 python myproject/manage.py createsuperuser
 ```
 
@@ -324,7 +328,7 @@ After entering your super user information you should be able to log into the ad
 
 When we ran `upsun push` a lot happened. Let's look at it all.
 
-```
+```bash
 upsun push
 [main 5f1e4af] Mount for SQLite
  2 files changed, 10 insertions(+), 2 deletions(-)
@@ -337,8 +341,7 @@ Are you sure you want to continue? [Y/n] y
 
 Upsun can have many copies of your app in different environments. At the beginning, we've just got one production environment on the `main` branch, but we could eventually have many environments that are used for testing and developing. 
 
-```
-
+```bash
   Enumerating objects: 8317, done.
   Counting objects: 100% (8317/8317), done.
   Delta compression using up to 10 threads
@@ -362,8 +365,7 @@ Upsun can have many copies of your app in different environments. At the beginni
 
 Based on our `.upsun/config.yaml` file, Upsun determined that we need one runtime environment with 0.5 CPU and 224MB RAM, and one disk mount with 512MB. You can read about how to [adjust these resources in the Upsun documentation](https://docs.upsun.com/manage-resources/adjust-resources.html).
 
-```
-
+```bash
       Building application 'upsun_django_sqlite' (runtime type: python:3.11, tree: 7e514d7)
         Generating runtime configuration.
 
@@ -385,7 +387,7 @@ Based on our `.upsun/config.yaml` file, Upsun determined that we need one runtim
 
 This is the part where Upsun uses `requirements.txt` to install your python libraries. This is done in the [Upsun build hook](https://docs.upsun.com/create-apps/hooks/hooks-comparison.html#build-hook). 
 
-```
+```bash
           W: + python myproject/manage.py collectstatic --noinput
 
           126 static files copied to '/app/static'.
@@ -393,8 +395,7 @@ This is the part where Upsun uses `requirements.txt` to install your python libr
 
 Upsun just ran a command to collect the static assets from your project and put them into a read-only location `/app/static` where the server can serve them. This command is also in the build hook (see `.upsun/config.yaml`). 
 
-```
-
+```bash
         Executing pre-flight checks...
 
         Compressing application.
@@ -402,12 +403,11 @@ Upsun just ran a command to collect the static assets from your project and put 
 
       W: Route 'main-bvxea6i-oes36x5dtgp2u.eu-5.platformsh.site' doesn't map to a domain of the project, using default development hostname.
       W: Route 'www.main-bvxea6i-oes36x5dtgp2u.eu-5.platformsh.site' doesn't map to a domain of the project, using default development hostname.
-
 ```
 
 Based on the `routes` part of `.upsun/config.yaml`, Upsun has created the above URLs to access your application.
 
-```
+```bash
       Provisioning certificates
         Validating 2 new domains
         Provisioned new certificate for 2 domains
@@ -418,13 +418,13 @@ Based on the `routes` part of `.upsun/config.yaml`, Upsun has created the above 
 
 Upsun provisioned LetsEncrypt certificates so that you're running on `https` by default.
 
-```
+```bash
       Blackfire configured for application upsun_django_sqlite
 ```
 
 Upsun automatically [integrates with Blackfire.io for monitoring and profiling](https://docs.upsun.com/increase-observability/application-metrics/understanding.html#blackfire-deterministic-observability-for-php-and-python). 
 
-```
+```bash
       Creating environment main
         Starting environment
         Updating endpoints for upsun_django_sqlite
@@ -456,7 +456,7 @@ Upsun automatically [integrates with Blackfire.io for monitoring and profiling](
 
 The [Upsun deploy hook](https://docs.upsun.com/create-apps/hooks/hooks-comparison.html#deploy-hook) is run after the application is in its environments but before requests are allowed to hit the webserver. In this case, Upsun has run the Django migrations which, on the first push, also creates and populates the SQLite database. 
 
-```
+```bash
         Opening environment
         Environment configuration
           upsun_django_sqlite (type: python:3.11, cpu: 0.5, memory: 224, disk: 512)
