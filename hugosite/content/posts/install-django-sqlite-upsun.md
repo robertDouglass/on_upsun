@@ -32,6 +32,7 @@ You need to have the following installed already:
 * pip
 * homebrew
 
+The [working code for this tutorial](https://github.com/robertDouglass/on_upsun/tree/main/01_install_django_sqlite_upsun) is available on Github. 
 
 ## 1. Prepare the environment
 
