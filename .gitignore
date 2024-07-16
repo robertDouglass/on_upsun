@@ -1,3 +1,6 @@
 hugosite/public/*
 .DS_Store
 */.DS_Store
+*/myenv
+*/.hugo_build.lock
+

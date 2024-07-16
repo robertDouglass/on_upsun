@@ -51,7 +51,7 @@ if os.getenv("PLATFORM_APPLICATION_NAME"):
     # Database service configuration, post-build only.
     if os.getenv("PLATFORM_RELATIONSHIPS") and PLATFORM_DB_RELATIONSHIP:
         platform_relationships = decode(os.getenv("PLATFORM_RELATIONSHIPS"))
-        if PLATFORM_DB_RELATIONSHIP in PLATFORM_relationships:
+        if PLATFORM_DB_RELATIONSHIP in platform_relationships:
             db_settings = platform_relationships[PLATFORM_DB_RELATIONSHIP][0]
             engine = None
             if (
