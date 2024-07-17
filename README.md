@@ -47,6 +47,7 @@ For detailed steps, refer to the [Install Django with PostgreSQL and PGVector on
 ```bash
 git clone https://github.com/robertDouglass/on_upsun.git
 cd on_upsun
+```
 
 ## Contact me
 
