@@ -82,14 +82,15 @@ services:
 {{% notice warning %}}
 As of 2024-07-17, `upsun project:init` has a bug when generating the `settings_psh.py` file. The variable seen on line 54 should be all lowercase.
 
-![Error in settings_psh.py](/posts/install-django-postgresql-pgvector-upsun/01_settings_psh_error.png)
-
-The bug has been reported and fixed upstream, and will be fixed in upcoming releases of the Upsun platform.
-
 ```python
         # if PLATFORM_DB_RELATIONSHIP in PLATFORM_relationships:
         if PLATFORM_DB_RELATIONSHIP in platform_relationships:
 ```
+
+![Error in settings_psh.py](/posts/install-django-postgresql-pgvector-upsun/01_settings_psh_error.png)
+
+The bug has been reported and fixed upstream, and will be fixed in upcoming releases of the Upsun platform.
+
 {{% /notice %}}
 
 
