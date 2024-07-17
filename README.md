@@ -27,7 +27,7 @@ This tutorial walks you through setting up a basic Django project with a SQLite 
 - Configuring Upsun for deployment
 - Creating an admin user
 
-For detailed steps, refer to the [Install Django with SQLite on Upsun tutorial](https://github.com/robertDouglass/on_upsun/tree/main/01_install_django_sqlite_upsun).
+For detailed steps, refer to the [Install Django with SQLite on Upsun tutorial](https://robertdouglass.github.io/on_upsun/posts/install-django-sqlite-upsun/).
 
 ### 2. Install Django with PostgreSQL and PGVector on Upsun
 
@@ -38,7 +38,7 @@ This advanced tutorial demonstrates how to configure a Django project to use Pos
 - Interacting with PostgreSQL
 - Installing and testing the PGVector extension
 
-For detailed steps, refer to the [Install Django with PostgreSQL and PGVector on Upsun tutorial](https://github.com/robertDouglass/on_upsun/tree/main/02_install_django_postgresql_pgvector_upsun).
+For detailed steps, refer to the [Install Django with PostgreSQL and PGVector on Upsun tutorial](https://robertdouglass.github.io/on_upsun/posts/install-django-postgresql-pgvector-upsun/).
 
 ## Getting Started
 

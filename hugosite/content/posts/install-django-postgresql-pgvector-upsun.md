@@ -6,6 +6,8 @@ draft = false
 
 In my article ["Install Django with SQLite on Upsun"](/posts/install-django-sqlite-upsun/), I explain why I love the [Upsun PaaS](https://upsun.com) and some of the great features you get when you use it. The next step in developing a production-worthy Django site on Upsun is to move to using an enterprise-grade database, PostgreSQL. In this tutorial, I also show how to install and use the [PGVector](https://github.com/pgvector/pgvector) extension because the apps that I'm building need the ability to do semantic queries on vectors, in part to do Retrieval Augmented Generation (RAG) with Large Language Models (LLM) such as ChatGPT or Claude. 
 
+The source code for this tutorial can be found in my [on_upsun Github repo](https://github.com/robertDouglass/on_upsun/tree/main/02_install_django_postgresql_pgvector_upsun). 
+
 Here is a summary of steps that I explained in the previous tutorial. 
 
 ## 1. Prepare the environment and start a Django project
@@ -68,6 +70,7 @@ This command has done the following:
 1. Added `.upsun/config.yaml` which is where Upsun settings live.
 2. Added `myproject/myproject/settings_psh.py`, code which reads Upsun environmental variables.
 3. Added a line at the end of `myproject/myproject/settings.py` to include the `settings_psh.py`.
+4. Created an `.environment` file with the appropriate Upsun environmental variables inside.
 
 This is a summary of the parts of `.upsun/config.yaml` that pertain to the PostgreSQL database. The important parts are the service definition, which results in a PostgreSQL database server running in its own container, and the `postgresql` relationship, which instructs Upsun to do everything needed to allow the Django app to connect to the database server.
 
