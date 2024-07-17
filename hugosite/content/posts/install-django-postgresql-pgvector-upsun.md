@@ -142,7 +142,7 @@ The careful observer will note that I also bumped the PostgreSQL version from 15
 {{% /notice %}}
 
 
-Certainly! Below is a sequence of SQL commands to create a new table using `pgvector`, insert a few embeddings into it, and perform a similarity search query to test its functionality.
+Below is a sequence of SQL commands to create a new table using `pgvector`, insert a few embeddings into it, and perform a similarity search query to test its functionality.
 
 ### Step 1: Create a Table with a Vector Column
 
