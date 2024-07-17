@@ -1,7 +1,7 @@
 +++
 title = 'Install Django with PostgreSQL and PGVector on Upsun'
 date = 2024-07-17T11:00:00+02:00
-draft = false
+draft = true
 +++
 
 The order of the imports and settings in your settings.py file determines which settings take precedence. In Django, settings defined later override earlier settings. Given this, the final definition of DATABASES will depend on whether PLATFORM_DB_RELATIONSHIP is set and the Upsun environment variables are present.
