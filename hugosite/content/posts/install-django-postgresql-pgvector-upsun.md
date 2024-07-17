@@ -4,7 +4,7 @@ date = 2024-07-17T11:00:00+02:00
 draft = false
 +++
 
-In my article ["Install Django with SQLite on Upsun"](/posts/install-django-sqlite-upsun/), I explain why I love the [Upsun PaaS](https://upsun.com) and some of the great features you get when you use it. The next step in developing a production-worthy Django site on Upsun is to move to using an enterprise grade database, PostgreSQL. In this tutorial, I also show how to install and use the [PGVector](https://github.com/pgvector/pgvector) extension because the apps that I'm building need the ability to do semantic queries on vectors, in part to do Retrieval Augmented Generation (RAG) with Large Language Models (LLM) such as ChatGPT or Claude. 
+In my article ["Install Django with SQLite on Upsun"](/posts/install-django-sqlite-upsun/), I explain why I love the [Upsun PaaS](https://upsun.com) and some of the great features you get when you use it. The next step in developing a production-worthy Django site on Upsun is to move to using an enterprise-grade database, PostgreSQL. In this tutorial, I also show how to install and use the [PGVector](https://github.com/pgvector/pgvector) extension because the apps that I'm building need the ability to do semantic queries on vectors, in part to do Retrieval Augmented Generation (RAG) with Large Language Models (LLM) such as ChatGPT or Claude. 
 
 Here is a summary of steps that I explained in the previous tutorial. 
 
@@ -27,7 +27,7 @@ cd ..
 
 ## 2. Make the project compatible with Upsun
 
-Assuming you have started an Upsun project and installed the Upsun CLI, run this in the root directory (`upsun_django_postgresql`):
+Assuming you have started an Upsun project and [installed the Upsun CLI](https://docs.upsun.com/administration/cli.html), run this in the root directory (`upsun_django_postgresql`):
 
 ```bash
 upsun project:init
