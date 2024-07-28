@@ -15,7 +15,7 @@ This small app shows the following very powerful patterns:
 3. Creating Workers with shared file system mounts on Upsun
 4. Running Redis on Upsun
 
-The full application code is here.
+The [full application code is here](https://github.com/robertDouglass/on_upsun/tree/main/03_django_redis_celery). All you need to do is to push it as-is to a fresh Upsun project.
 
 ## Extending Django behavior with Signals
 

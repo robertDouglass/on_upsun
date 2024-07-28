@@ -40,14 +40,20 @@ This advanced tutorial demonstrates how to configure a Django project to use Pos
 
 For detailed steps, refer to the [Install Django with PostgreSQL and PGVector on Upsun tutorial](https://robertdouglass.github.io/on_upsun/posts/install-django-postgresql-pgvector-upsun/).
 
-## Getting Started
+### 3. Background Tasks using Celery with Redis in Django on Upsun
 
-### Clone the Repository
+This tutorial shows the [power of using Celery background tasks in Upsun workers](https://robertdouglass.github.io/on_upsun/posts/django-redis-celery/). It covers:
 
-```bash
-git clone https://github.com/robertDouglass/on_upsun.git
-cd on_upsun
-```
+- Setting up a minimal Django application on Upsun
+- Using PostgreSQL database, Python Gunicorn application server, and Redis
+- Implementing a file upload feature with background processing
+- Extending Django behavior with Signals
+- Using Celery Queue and Beat for background tasks
+- Creating Workers with shared file system mounts on Upsun
+- Running Redis on Upsun
+- Configuring Django settings for Celery and Redis
+- Monitoring Celery tasks in action
+- Interacting with Redis using the CLI on Upsun
 
 ## Contact me
 
