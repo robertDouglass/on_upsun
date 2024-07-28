@@ -3,4 +3,4 @@ hugosite/public/*
 */.DS_Store
 */myenv
 */.hugo_build.lock
-
+hugosite/content/posts/.DS_Store
