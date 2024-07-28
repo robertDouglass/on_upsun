@@ -2,11 +2,6 @@
 
 Welcome to the "On Upsun" project! This repository contains Hugo pages that illustrate how to set up and deploy Django projects on the Upsun Platform-as-a-Service (PaaS) by Platform.sh. The tutorials cover various configurations, including using SQLite and PostgreSQL with the PGVector extension for advanced database functionalities.
 
-## Contents
-
-- **Install Django with SQLite on Upsun**: Basic setup of Django using SQLite on Upsun.
-- **Install Django with PostgreSQL and PGVector on Upsun**: Advanced setup with PostgreSQL and PGVector for semantic queries and Retrieval Augmented Generation (RAG) with Large Language Models (LLM).
-
 ## Prerequisites
 
 - Git
