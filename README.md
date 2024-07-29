@@ -50,6 +50,17 @@ This tutorial shows the [power of using Celery background tasks in Upsun workers
 - Monitoring Celery tasks in action
 - Interacting with Redis using the CLI on Upsun
 
+### 4. Develop Django Locally - PostgreSQL and Redis on Upsun
+
+This tutorial focuses on [developing locally but connecting to remote services on Upsun](https://robertdouglass.github.io/on_upsun/posts/develop-locally-django-postgresql-redis-upsun/).
+
+- Explains developing Django locally using PostgreSQL and Redis on Upsun
+- Benefits: saves time, easy access to production data, simplified project switching
+- Process: deploy to Upsun, create dev branch, open tunnels to cloud services
+- Run Django locally while connected to cloud databases
+- Demonstrates making changes locally and merging to production
+- Allows instant data cloning and database sharing among developers
+
 ## Contact me
 
 If you have any questions, my email address is rob@robshouse.net and you can [find me on LinkedIn](https://www.linkedin.com/in/roberttdouglass/). There is also an [Upsun Discord forum](https://discord.gg/PkMc2pVCDV) where I hang out, and you're welcome to find me there.

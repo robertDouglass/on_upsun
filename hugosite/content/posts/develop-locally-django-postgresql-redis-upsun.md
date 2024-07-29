@@ -15,10 +15,10 @@ There are several reasons why a developer would want to develop without installi
 Connecting your local Django installation to the databases in the cloud solves these. Doing it on Upsun brings further advantages, though. 
 
 1. Instant cloning of production data into development environments.
-2. Connect to databases of your choice with 2 local commands.
+2. Quickly connect to databases of your choice with no data syncrhonization and no Docker needed.
 3. Share databases with other devs working on the same branch.
 
-To start, deploy the File Uploader example app onto Upsun. 
+To start, deploy the [File Uploader example app](https://github.com/robertDouglass/on_upsun/tree/main/03_django_redis_celery) onto Upsun. 
 
 ```bash
 git clone git@github.com:robertDouglass/on_upsun.git
@@ -36,7 +36,7 @@ At this point you have a running Django app on Upsun, and you have the code for 
 ```bash
 upsun url
 ```
-Pick any of the URLs and you should end up on this very simple screen where you can upload a file or two. 
+Pick any of the URLs and you should end up on this very simple screen where you can upload files. 
 
 ![File Uploader](/posts/develop-locally-django-postgresql-redis-upsun/01_file_upload.png)
 
