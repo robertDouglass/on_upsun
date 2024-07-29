@@ -1,6 +1,6 @@
 +++
 title = 'Develop Django Locally - PostgreSQL and Redis on Upsun'
-date = 2024-07-29T16:58:24+02:00
+date = 2024-07-29T12:00:00+02:00
 draft = false
 +++
 
