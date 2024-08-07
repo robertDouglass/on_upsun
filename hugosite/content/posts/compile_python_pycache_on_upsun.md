@@ -4,7 +4,7 @@ date = 2024-08-07T12:00:00+02:00
 draft = false
 +++
 
-When the python interpretor executes python files, it compiles them to bytecode and saves the bytecode as files in a directory called `__pycache__` in the same directory as the code itself. You might have seen such files, here's an example from a Django project:
+When the python interpretor executes python files, it compiles them to bytecode and saves it as files in a directory called `__pycache__` in the same directory as the code itself. You might have seen such files, here's an example from a Django project:
 
 ```bash
 $ ls -1 __pycache__/
@@ -26,6 +26,15 @@ You have two options for how to get the bytecode into place to gain the efficien
 2. Let Upsun compile the python code in the build hook.
 
 The second option is superior because it is compiling on the system it will run on, and you won't get any unexpected errors due to mismatches in versions or operating systems.
+
+First, prevent any `__pycache__` files from ever getting into git by adding this to your `.gitignore` file.
+
+```bash
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+```
 
 To have Upsun compile the pytyon code in the build hook, your build hook should look something like this in `.upsun/config.yaml`:
 
