@@ -191,10 +191,37 @@ Handling sensitive data, like API keys, requires extra care. Let's use the OPENA
    ```
 
 4. Debug Variable Issues:
-   - Always redeploy after changing variables
-   - Use `upsun ssh` to check environment variables directly on the server
-   - Review Upsun's activity log for recent changes
-   - Use `PLATFORM_TREE_ID` for build-specific logging or debugging
+   * Always redeploy after changing variables:
+     ```bash
+     upsun redeploy
+     ```
+   * Use `upsun ssh` to check environment variables:
+     ```bash
+     $ upsun ssh
+     $ env | grep PLATFORM
+     PLATFORM_APP_DIR=/app
+     PLATFORM_APPLICATION_NAME=myapp
+     PLATFORM_ENVIRONMENT=main
+     PLATFORM_ENVIRONMENT_TYPE=production
+     ...
+
+     $ echo $OPENAI_API_KEY
+     sk-abcdefghijklmnopqrstuvwxyz123456
+     ```
+     This allows you to verify the exact values of environment variables in your Upsun environment.
+   * Review Upsun's activity log:
+     ```bash
+     $ upsun activity:list
+     Activities on the project django_pycache_test (wj2ykkepeqdzu), environment main (type: production):
+     +---------------+---------------------------+---------------------------------------------------------+----------+----------+---------+
+     | ID            | Created                   | Description                                             | Progress | State    | Result  |
+     +---------------+---------------------------+---------------------------------------------------------+----------+----------+---------+
+     | guki7iecmjtfk | 2024-08-08T10:45:42+00:00 | Robert Douglass added variable env:SUPER_SECRET         | 100%     | complete | success |
+     | jgtaw4sfbz4bq | 2024-08-08T02:03:43+00:00 | Upsun Bot created a backup of Main                      | 100%     | complete | success |
+     ...
+     ```
+     This command shows recent activities, helping you track changes like variable updates or environment activations.
+
 
 ## Conclusion
 
