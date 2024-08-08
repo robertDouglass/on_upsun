@@ -173,6 +173,7 @@ Handling sensitive data, like API keys, requires extra care. Let's use the OPENA
            }
        }
    ```
+   This approach allows you to maintain a single settings file while still customizing behavior per environment type and name.
 
 3. Handle Sensitive Data:
    For highly sensitive information, use Upsun's encrypted variables:
