@@ -1,5 +1,5 @@
 +++
-title = 'Compile your Python code to Pycache on Upsun'
+title = 'Variable Management for Django on Upsun'
 date = 2024-08-08T09:00:00+02:00
 draft = false
 +++
