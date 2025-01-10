@@ -1,0 +1,51 @@
+# .upsun/config.yaml
+name: 'on-upsun'
+
+type: 'nodejs:18'
+
+build:
+    flavor: none
+
+dependencies:
+    nodejs:
+        hugo: '*'
+
+hooks:
+    build: |
+        # Install Hugo
+        curl -L https://github.com/gohugoio/hugo/releases/download/v0.121.1/hugo_extended_0.121.1_linux-amd64.deb -o hugo.deb
+        apt-get update
+        apt install ./hugo.deb
+        cd hugosite
+        hugo --minify
+
+web:
+    locations:
+        '/':
+            root: 'hugosite/public'
+            index: ['index.html']
+            expires: 1h
+            scripts: false
+            allow: true
+            rules:
+                \.(css|js|gif|jpe?g|png|ttf|eot|woff2?|otf|html|ico|svg?)$:
+                    allow: true
+                ^/robots\.txt$:
+                    allow: true
+                search_index\.json$:
+                    allow: true
+
+disk: 512
+
+mounts:
+    'hugosite/public/images':
+        source: local
+        source_path: images
+
+routes:
+    "https://{default}/":
+        type: upstream
+        upstream: "app:http"
+    "https://www.{default}/":
+        type: redirect
+        to: "https://{default}/"
